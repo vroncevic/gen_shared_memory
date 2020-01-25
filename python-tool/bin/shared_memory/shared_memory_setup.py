@@ -1,13 +1,13 @@
 # -*- coding: UTF-8 -*-
-# shm_setup.py
+# shared_memory_setup.py
 # Copyright (C) 2019 Vladimir Roncevic <elektron.ronca@gmail.com>
 #
-# gen_shm is free software: you can redistribute it and/or modify it
+# gen_shared_memory is free software: you can redistribute it and/or modify it
 # under the terms of the GNU General Public License as published by the
 # Free Software Foundation, either version 3 of the License, or
 # (at your option) any later version.
 #
-# gen_shm is distributed in the hope that it will be useful, but
+# gen_shared_memory is distributed in the hope that it will be useful, but
 # WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 # See the GNU General Public License for more details.
@@ -54,7 +54,7 @@ class SHMSetup(object):
     """
 
     __slots__ = ('VERBOSE')
-    VERBOSE = 'GEN_SHM::SHM_SETUP::SHMSETUP'
+    VERBOSE = 'GEN_SHARED_MEMORY::GEN_SHARED_MEMORY_SETUP::SHMSETUP'
 
     def __init__(self, verbose=False):
         """

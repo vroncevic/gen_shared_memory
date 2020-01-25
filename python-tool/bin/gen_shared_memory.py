@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
-# gen_shm.py
+# gen_shared_memory.py
 # Copyright (C) 2019 Vladimir Roncevic <elektron.ronca@gmail.com>
 #
-# gen_shm is free software: you can redistribute it and/or modify it
+# gen_shared_memory is free software: you can redistribute it and/or modify it
 # under the terms of the GNU General Public License as published by the
 # Free Software Foundation, either version 3 of the License, or
 # (at your option) any later version.
 #
-# gen_shm is distributed in the hope that it will be useful, but
+# gen_shared_memory is distributed in the hope that it will be useful, but
 # WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 # See the GNU General Public License for more details.
@@ -22,7 +22,7 @@ from os import getcwd
 try:
     from pathlib import Path
 
-    from shm.shm_setup import SHMSetup
+    from shared_memory.shared_memory_setup import SHMSetup
     from ats_utilities.cfg_base import CfgBase
     from ats_utilities.console_io.error import error_message
     from ats_utilities.console_io.verbose import verbose_message
@@ -57,8 +57,8 @@ class GenSHM(CfgBase):
     """
 
     __slots__ = ('VERBOSE', '__CONFIG', '__OPS')
-    VERBOSE = 'GEN_SHM'
-    __CONFIG = '/../conf/gen_shm.cfg'
+    VERBOSE = 'GEN_SHARED_MEMORY'
+    __CONFIG = '/../conf/gen_shared_memory.cfg'
     __OPS = ['-g', '--gen', '-h', '--version']
 
     def __init__(self, verbose=False):
@@ -118,6 +118,6 @@ class GenSHM(CfgBase):
             else:
                 error_message(self.name, 'project already exist !')
         else:
-            error_message('gen_shm', 'Tool is not operational')
+            error_message('gen_shared_memory', 'Tool is not operational')
         return True if status else False
 
