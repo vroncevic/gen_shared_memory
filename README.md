@@ -9,9 +9,9 @@ other information that should be provided before the modules are installed.
 To install this set of modules type the following:
 
 ```
-cp -R ~/gen_shm_scripts/bin/   /root/scripts/gen_shm/ver.1.0/
-cp -R ~/gen_shm_scripts/conf/  /root/scripts/gen_shm/ver.1.0/
-cp -R ~/gen_shm_scripts/log/   /root/scripts/gen_shm/ver.1.0/
+cp -R ~/gen_shared_memory/bin/   /root/scripts/gen_shared_memory/ver.1.0/
+cp -R ~/gen_shared_memory/conf/  /root/scripts/gen_shared_memory/ver.1.0/
+cp -R ~/gen_shared_memory/log/   /root/scripts/gen_shared_memory/ver.1.0/
 ```
 
 ### DEPENDENCIES
@@ -22,7 +22,7 @@ This module requires these other modules and libraries:
 
 ### COPYRIGHT AND LICENCE
 
-Copyright (C) 2019 by https://vroncevic.github.io/shared_memory_skeleton/
+Copyright (C) 2019 by https://vroncevic.github.io/gen_shared_memory/
 
 This tool is free software; you can redistribute it and/or modify
 it under the same terms as Python itself, either Python version 2.7/3.4 or,
