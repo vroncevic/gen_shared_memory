@@ -5,9 +5,9 @@
      __init__.py
  Copyright
      Copyright (C) 2018 Vladimir Roncevic <elektron.ronca@gmail.com>
-     gen_shared_memory is free software: you can redistribute it and/or modify it
-     under the terms of the GNU General Public License as published by the
-     Free Software Foundation, either version 3 of the License, or
+     gen_shared_memory is free software: you can redistribute it and/or
+     modify it under the terms of the GNU General Public License as published
+     by the Free Software Foundation, either version 3 of the License, or
      (at your option) any later version.
      gen_shared_memory is distributed in the hope that it will be useful, but
      WITHOUT ANY WARRANTY; without even the implied warranty of
