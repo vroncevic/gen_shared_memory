@@ -32,7 +32,7 @@ other information that should be provided before the modules are installed.
 
 ![Install Python2 Package](https://github.com/vroncevic/gen_shared_memory/workflows/Install%20Python2%20Package%20gen_shared_memory/badge.svg?branch=master) ![Install Python3 Package](https://github.com/vroncevic/gen_shared_memory/workflows/Install%20Python3%20Package%20gen_shared_memory/badge.svg?branch=master)
 
-Currently there are three ways to install tool:
+Currently there are three ways to install tool
 * Install process based on pip
 * Install process based on setup.py (setuptools)
 * Install process based on docker mechanism
@@ -77,19 +77,19 @@ You can use docker to create image/container.
 
 ### Dependencies
 
-**gen_shared_memory** requires next modules and libraries:
+**gen_shared_memory** requires next modules and libraries
 
 * [ats-utilities - Python App/Tool/Script Utilities](https://vroncevic.github.io/ats_utilities)
 
 ### Generation flow of py module
 
-Base flow of generation process:
+Base flow of generation process
 
-![alt tag](https://raw.githubusercontent.com/vroncevic/gen_shared_memory/dev/docs/gen_shared_memory_flow.png)
+![Generation Process](https://raw.githubusercontent.com/vroncevic/gen_shared_memory/dev/docs/gen_shared_memory_flow.png)
 
 ### Tool structure
 
-**gen_shared_memory** is based on OOP:
+**gen_shared_memory** is based on OOP
 
 Generator structure:
 
@@ -101,7 +101,7 @@ Generator structure:
 
 [![Documentation Status](https://readthedocs.org/projects/gen_shared_memory/badge/?version=latest)](https://gen_shared_memory.readthedocs.io/projects/gen_shared_memory/en/latest/?badge=latest)
 
-More documentation and info at:
+More documentation and info at
 * [gen_shared_memory.readthedocs.io](https://gen_shared_memory.readthedocs.io/en/latest/)
 * [www.python.org](https://www.python.org/)
 
