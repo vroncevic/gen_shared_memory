@@ -113,10 +113,7 @@ setup(
     keywords='Unix, Linux, Development, Shared Memory, Modules',
     platforms='POSIX',
     classifiers=PYP_CLASSIFIERS,
-    packages=[
-        'gen_shared_memory', 'gen_shared_memory.pro',
-        'gen_shared_memory.pro.config'
-    ],
+    packages=['gen_shared_memory', 'gen_shared_memory.pro'],
     install_requires=['ats-utilities'],
     package_data={
         'gen_shared_memory': [
