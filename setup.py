@@ -120,8 +120,7 @@ setup(
             'conf/gen_shared_memory.logo',
             'conf/gen_shared_memory.cfg',
             'conf/gen_shared_memory_util.cfg',
-            'conf/project.yaml',
-            'conf/template/posix/np.template',
+            'conf/template/generator_test.template',
             'log/gen_shared_memory.log'
         ]
     },
