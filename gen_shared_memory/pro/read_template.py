@@ -5,8 +5,8 @@ Module
     read_template.py
 Copyright
     Copyright (C) 2018 - 2024 Vladimir Roncevic <elektron.ronca@gmail.com>
-    gen_shared_memory is free software: you can redistribute it and/or modify it
-    under the terms of the GNU General Public License as published by the
+    gen_shared_memory is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by the
     Free Software Foundation, either version 3 of the License, or
     (at your option) any later version.
     gen_shared_memory is distributed in the hope that it will be useful, but
@@ -21,7 +21,7 @@ Info
 '''
 
 import sys
-from typing import Any, List, Dict
+from typing import Any, List, Dict, Optional
 from os.path import isdir, dirname, realpath
 
 try:
@@ -39,7 +39,7 @@ __author__ = 'Vladimir Roncevic'
 __copyright__ = '(C) 2024, https://vroncevic.github.io/gen_shared_memory'
 __credits__: List[str] = ['Vladimir Roncevic', 'Python Software Foundation']
 __license__ = 'https://github.com/vroncevic/gen_shared_memory/blob/dev/LICENSE'
-__version__ = '1.0.0'
+__version__ = '1.0.1'
 __maintainer__ = 'Vladimir Roncevic'
 __email__ = 'elektron.ronca@gmail.com'
 __status__ = 'Updated'
@@ -93,8 +93,8 @@ class ReadTemplate(FileCheck, TemplateDir):
             :rtype: <List[Dict[str, str]]>
             :exceptions: ATSTypeError | ATSValueError
         '''
-        error_msg: str | None = None
-        error_id: int | None = None
+        error_msg: Optional[str] = None
+        error_id: Optional[int] = None
         error_msg, error_id = self.check_params([('dict:config', config)])
         if error_id == self.TYPE_ERROR:
             raise ATSTypeError(error_msg)
@@ -104,7 +104,7 @@ class ReadTemplate(FileCheck, TemplateDir):
         modules: List[str] = config[ProConfig.MODULES]
         loaded_templates: List[Dict[str, str]] = []
         for template_file, module_file in zip(templates, modules):
-            template_content: str | None = None
+            template_content: Optional[str] = None
             template_file_path: str = f'{self.template_dir}{template_file}'
             self.check_path(template_file_path, verbose)
             self.check_mode('r', verbose)

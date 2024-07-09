@@ -5,8 +5,8 @@ Module
     write_template_test.py
 Copyright
     Copyright (C) 2018 - 2024 Vladimir Roncevic <elektron.ronca@gmail.com>
-    gen_shared_memory is free software: you can redistribute it and/or modify it
-    under the terms of the GNU General Public License as published by the
+    gen_shared_memory is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by the
     Free Software Foundation, either version 3 of the License, or
     (at your option) any later version.
     gen_shared_memory is distributed in the hope that it will be useful, but
@@ -41,7 +41,7 @@ __author__ = 'Vladimir Roncevic'
 __copyright__ = '(C) 2024, https://vroncevic.github.io/gen_shared_memory'
 __credits__: List[str] = ['Vladimir Roncevic', 'Python Software Foundation']
 __license__ = 'https://github.com/vroncevic/gen_shared_memory/blob/dev/LICENSE'
-__version__ = '1.0.0'
+__version__ = '1.0.1'
 __maintainer__ = 'Vladimir Roncevic'
 __email__ = 'elektron.ronca@gmail.com'
 __status__ = 'Updated'
