@@ -133,6 +133,16 @@ Generator structure
     6 directories, 15 files
 ```
 
+### Code coverage
+
+| Name | Stmts | Miss | Cover |
+|------|-------|------|-------|
+| `gen_shared_memory/__init__.py` | 71 | 12 | 83% |
+| `gen_shared_memory/pro/__init__.py` | 59 | 2 | 97% |
+| `gen_shared_memory/pro/read_template.py` | 53 | 2 | 96% |
+| `gen_shared_memory/pro/write_template.py` | 54 | 3 | 94% |
+| **Total** | 237 | 19 | 92% |
+
 ### Docs
 
 [![Documentation Status](https://readthedocs.org/projects/gen_shared_memory/badge/?version=latest)](https://gen-shared-memory.readthedocs.io/projects/gen_shared_memory/en/latest/?badge=latest)

@@ -5,8 +5,8 @@ Module
     write_template.py
 Copyright
     Copyright (C) 2018 - 2024 Vladimir Roncevic <elektron.ronca@gmail.com>
-    gen_shared_memory is free software: you can redistribute it and/or modify it
-    under the terms of the GNU General Public License as published by the
+    gen_shared_memory is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by the
     Free Software Foundation, either version 3 of the License, or
     (at your option) any later version.
     gen_shared_memory is distributed in the hope that it will be useful, but
@@ -21,7 +21,7 @@ Info
 '''
 
 import sys
-from typing import List, Dict
+from typing import List, Dict, Optional
 from datetime import date
 from os import getcwd, chmod, mkdir
 from string import Template
@@ -39,7 +39,7 @@ __author__ = 'Vladimir Roncevic'
 __copyright__ = '(C) 2024, https://vroncevic.github.io/gen_shared_memory'
 __credits__: List[str] = ['Vladimir Roncevic', 'Python Software Foundation']
 __license__ = 'https://github.com/vroncevic/gen_shared_memory/blob/dev/LICENSE'
-__version__ = '1.0.0'
+__version__ = '1.0.1'
 __maintainer__ = 'Vladimir Roncevic'
 __email__ = 'elektron.ronca@gmail.com'
 __status__ = 'Updated'
@@ -75,7 +75,7 @@ class WriteTemplate(FileCheck):
     def write(
         self,
         templates: List[Dict[str, str]],
-        pro_name: str | None,
+        pro_name: Optional[str],
         verbose: bool = False
     ) -> bool:
         '''
@@ -84,15 +84,15 @@ class WriteTemplate(FileCheck):
             :param templates: Templates with params
             :type templates: <List[Dict[str, str]]>
             :param pro_name: Project name | None
-            :type pro_name: <str> | <NoneType>
+            :type pro_name: <Optional[str]>
             :param verbose: Enable/Disable verbose option
             :type verbose: <bool>
             :return: True (success operation) | False
             :rtype: <bool>
             :exceptions: ATSTypeError | ATSValueError
         '''
-        error_msg: str | None = None
-        error_id: int | None = None
+        error_msg: Optional[str] = None
+        error_id: Optional[int] = None
         error_msg, error_id = self.check_params([
             ('list:templates', templates), ('str:pro_name', pro_name)
         ])
