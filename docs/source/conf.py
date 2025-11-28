@@ -4,9 +4,9 @@
 Module
     conf.py
 Copyright
-    Copyright (C) 2018 - 2024 Vladimir Roncevic <elektron.ronca@gmail.com>
-    gen_shared_memory is free software: you can redistribute it and/or modify it
-    under the terms of the GNU General Public License as published by the
+    Copyright (C) 2018 - 2026 Vladimir Roncevic <elektron.ronca@gmail.com>
+    gen_shared_memory is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by the
     Free Software Foundation, either version 3 of the License, or
     (at your option) any later version.
     gen_shared_memory is distributed in the hope that it will be useful, but
@@ -27,9 +27,9 @@ from typing import Any, List, Dict, Tuple
 sys.path.insert(0, os.path.abspath('../../'))
 
 project: str = 'gen_shared_memory'
-project_copyright: str = '2024, Vladimir Roncevic <elektron.ronca@gmail.com>'
+project_copyright: str = '2026, Vladimir Roncevic <elektron.ronca@gmail.com>'
 author: str = 'Vladimir Roncevic <elektron.ronca@gmail.com>'
-version: str = '1.0.1'
+version: str = '1.0.2'
 release: str = 'https://github.com/vroncevic/gen_shared_memory/releases'
 extensions: List[str] = ['sphinx.ext.autodoc', 'sphinx.ext.viewcode']
 templates_path: List[str] = ['_templates']
