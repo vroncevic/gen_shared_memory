@@ -9,7 +9,7 @@ The README is used to introduce the modules and provide instructions on
 how to install the modules, any machine dependencies it may have and any
 other information that should be provided before the modules are installed.
 
-|gen_shared_memory python checker| |gen_shared_memory python package| |github issues| |documentation status| |github contributors|
+|gen_shared_memory python checker| |gen_shared_memory python package| |gen_shared_memory interface checker| |gen_shared_memory isp checker| |gen_shared_memory srp checker| |github issues| |documentation status| |github contributors|
 
 .. |gen_shared_memory python checker| image:: https://github.com/vroncevic/gen_shared_memory/actions/workflows/gen_shared_memory_python_checker.yml/badge.svg
    :target: https://github.com/vroncevic/gen_shared_memory/actions/workflows/gen_shared_memory_python_checker.yml
@@ -17,24 +17,33 @@ other information that should be provided before the modules are installed.
 .. |gen_shared_memory python package| image:: https://github.com/vroncevic/gen_shared_memory/actions/workflows/gen_shared_memory_package_checker.yml/badge.svg
    :target: https://github.com/vroncevic/gen_shared_memory/actions/workflows/gen_shared_memory_package.yml
 
+.. |gen_shared_memory interface checker| image:: https://github.com/vroncevic/gen_shared_memory/actions/workflows/gen_shared_memory_interface_checker.yml/badge.svg
+   :target: https://github.com/vroncevic/gen_shared_memory/actions/workflows/gen_shared_memory_interface_checker.yml
+
+.. |gen_shared_memory isp checker| image:: https://github.com/vroncevic/gen_shared_memory/actions/workflows/gen_shared_memory_isp_checker.yml/badge.svg
+   :target: https://github.com/vroncevic/gen_shared_memory/actions/workflows/gen_shared_memory_isp_checker.yml
+
+.. |gen_shared_memory srp checker| image:: https://github.com/vroncevic/gen_shared_memory/actions/workflows/gen_shared_memory_srp_checker.yml/badge.svg
+   :target: https://github.com/vroncevic/gen_shared_memory/actions/workflows/gen_shared_memory_srp_checker.yml
+
 .. |github issues| image:: https://img.shields.io/github/issues/vroncevic/gen_shared_memory.svg
    :target: https://github.com/vroncevic/gen_shared_memory/issues
 
 .. |github contributors| image:: https://img.shields.io/github/contributors/vroncevic/gen_shared_memory.svg
    :target: https://github.com/vroncevic/gen_shared_memory/graphs/contributors
 
-.. |documentation status| image:: https://readthedocs.org/projects/gen_shared_memory/badge/?version=latest
+.. |documentation status| image:: https://readthedocs.org/projects/gen-shared-memory/badge/?version=latest
    :target: https://gen-shared-memory.readthedocs.io/en/latest/?badge=latest
 
 .. toctree::
    :maxdepth: 4
-   :caption: Contents
+   :caption: Contents:
 
    self
    modules
 
-Installation
--------------
+🚀 Installation
+====================================================================
 
 |gen_shared_memory python3 build|
 
@@ -45,24 +54,17 @@ Navigate to release `page`_ download and extract release archive.
 
 .. _page: https://github.com/vroncevic/gen_shared_memory/releases
 
-To install package type the following
+To install this set of modules type the following
 
 .. code-block:: bash
 
     tar xvzf gen_shared_memory-x.y.z.tar.gz
     cd gen_shared_memory-x.y.z/
     # python3
-    wget https://bootstrap.pypa.io/get-pip.py
-    python3 get-pip.py 
-    python3 -m pip install --upgrade setuptools
-    python3 -m pip install --upgrade pip
-    python3 -m pip install --upgrade build
     pip3 install -r requirements.txt
-    python3 -m build --no-isolation --wheel
-    pip3 install ./dist/gen_shared_memory-*-py3-none-any.whl
-    rm -f get-pip.py
-    chmod 755 /usr/local/lib/python3.10/dist-packages/usr/local/bin/gen_shared_memory_run.py
-    ln -s /usr/local/lib/python3.10/dist-packages/usr/local/bin/gen_shared_memory_run.py /usr/local/bin/gen_shared_memory_run.py
+    python3 setup.py install_lib
+    python3 setup.py install_egg_info
+    python3 setup.py install_data
 
 You can use Docker to create image/container, or You can use pip to install
 
@@ -71,43 +73,82 @@ You can use Docker to create image/container, or You can use pip to install
     # pyton3
     pip3 install gen_shared_memory
 
-Dependencies
--------------
+📦 Dependencies
+====================================================================
 
 **gen_shared_memory** requires next modules and libraries
 
 * `ats-utilities - Python App/Tool/Script Utilities <https://pypi.org/project/ats-utilities/>`_
 
-Tool structure
+📁 Tool structure
+====================================================================
 
-**gen_shared_memory** is based on OOP.
+**gen_shared_memory** is based on OOP
+
+Code structure
 
 .. code-block:: bash
 
     gen_shared_memory/
-           ├── conf/
-           │   ├── gen_shared_memory.cfg
-           │   ├── gen_shared_memory.logo
-           │   ├── gen_shared_memory_util.cfg
-           │   ├── project.yaml
-           │   └── template/
-           │       ├── client.template
-           │       ├── Makefile.template
-           │       ├── server.template
-           │       └── shared_memory.template
-           ├── __init__.py
-           ├── log/
-           │   └── gen_shared_memory.log
-           ├── pro/
-           │   ├── __init__.py
-           │   ├── read_template.py
-           │   └── write_template.py
-           ├── py.typed
-           └── run/
-               └── gen_shared_memory_run.py
+         ├── core/
+         │   ├── __init__.py
+         │   ├── model/
+         │   │   ├── __init__.py
+         │   │   └── project_setup.py
+         │   └── service/
+         │       ├── engine.py
+         │       ├── __init__.py
+         │       ├── iservice.py
+         │       └── isubprocessor.py
+         ├── engine.py
+         ├── infrastructure/
+         │   ├── cli/
+         │   │   ├── engine.py
+         │   │   ├── icli.py
+         │   │   ├── __init__.py
+         │   │   └── setup/
+         │   │       ├── bundle.py
+         │   │       ├── dep_validator.py
+         │   │       ├── dependencies.py
+         │   │       ├── factory.py
+         │   │       ├── __init__.py
+         │   │       ├── keys.py
+         │   │       ├── opt_validator.py
+         │   │       ├── options.py
+         │   │       ├── registry.py
+         │   │       └── validator.py
+         │   ├── command/
+         │   │   ├── command.py
+         │   │   ├── gen_shared_memory_command_definition.py
+         │   │   ├── gen_shared_memory_command_executor.py
+         │   │   ├── icommand_definition.py
+         │   │   ├── icommand_executor.py
+         │   │   └── __init__.py
+         │   ├── config/
+         │   │   ├── gen_shared_memory.cfg
+         │   │   ├── gen_shared_memory.logo
+         │   │   ├── scheme.json
+         │   │   └── templates.tgz
+         │   ├── __init__.py
+         │   └── subprocessor.py
+         ├── __init__.py
+         ├── py.typed
+         └── setup/
+             ├── bundle.py
+             ├── dep_validator.py
+             ├── dependencies.py
+             ├── factory.py
+             ├── __init__.py
+             ├── keys.py
+             ├── opt_validator.py
+             ├── options.py
+             ├── registry.py
+             └── validator.py
 
-Copyright and licence
-----------------------
+     10 directories, 45 files
+
+📄 Copyright and licence
+====================================================================
 
 |license: gpl v3| |license: apache 2.0|
 
